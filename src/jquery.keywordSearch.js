@@ -1,4 +1,12 @@
 (function(){
+   /**
+    strbuf 
+    @description : used for mounting data by tpl
+    @params tpl 
+    @params data
+   */
+  !function(){function t(n){if(this.__data=[],n){var r,i=arguments;if(!(this instanceof t)){return r=new t,r.push.apply(r,i).toString()}this.push.apply(this,i)}}t.prototype={push:function(t,n,r){var i,o=arguments;return i=o.length<2?void 0===t?"":t:"object"==typeof n?t.replace(/\$\{([\w.]+)\}/g,function(t,i){for(var o=i.split("."),u=0,a=o.length,e=n;a>u;){try{e=e[o[u++]]}catch(s){e=t}}e=e||"";return void 0===e?r:e}):t.replace(/\{(\d+)\}/g,function(t,n){return o[+n+1]}),this.__data.push(i),this},pushArray:function(t,n,r){for(var i,o=0;o<n.length;o++){i=n[o],this.push(t,i,r)}},toString:function(t){return this.__data.join(void 0===t?"":t)}},window.strbuf=t}();
+  
   var ksWrapTpl = '<div class="ks-wrap" id=${__uuid}>' +
                   '<div/>';
                   
