@@ -16,7 +16,12 @@
                       '<span class="ks-item-key">${itemName}</span>'
                   '<div/>';
 
+
+
   function noop(){}
+
+
+
 
   function KeywordSearch(options){
     if(!(this instanceof KeywordSearch)){
