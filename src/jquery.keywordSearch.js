@@ -20,9 +20,6 @@
 
   function noop(){}
 
-
-
-
   function KeywordSearch(options){
     if(!(this instanceof KeywordSearch)){
       throw 'please add "new" keyword';
