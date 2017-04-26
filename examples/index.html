@@ -18,7 +18,7 @@
     <script>
         $(function(){
             new KeywordSearch({
-              url:'/supply/index',
+              url:'http://easy-mock.com/mock/5900c3a1875d7232a38b28e3/example_1493205689941_1493222305418/KeywordSearch',
               keyword: 'kw',
               id : '#keywordSearch',
               loadType:'get',
@@ -29,7 +29,7 @@
                   }
                   return res.data.map(function(d){
                     return {
-                      itemName : d.supply_name
+                      itemName : d.name
                     }
                   })
                 }else{

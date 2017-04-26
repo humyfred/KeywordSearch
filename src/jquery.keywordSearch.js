@@ -59,6 +59,7 @@
       params[this._keyword] = this.target.val();
       this.focus();
       this._ksWrap.html('<div class="ks-item text-center">加载中...</div>');
+      var currentIdx = this.requestIdx ++;
       $.ajax({
         url: this._url,
         type: this._loadType,
@@ -66,7 +67,9 @@
         dataType : 'json',
         success : function(res){
           try {
-            self.mountData(self.processData(self._data, res));
+            if(currentIdx === self.requestIdx - 1){
+              self.mountData(self.processData(self._data, res));
+            }
           } catch (e) {
             error.call(self, e, res);
           }
@@ -87,6 +90,7 @@
       }
     },
     processData : function(data, res){
+
       if(typeof data === 'function'){
         var result = data.call(this, res);
         if(result === false){
