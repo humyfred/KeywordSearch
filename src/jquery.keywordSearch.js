@@ -31,6 +31,7 @@
     this._data = options.data;
     this._error = options.error || noop;
     this._itemTpl = options.itemTpl || ksItemTpl;
+    this.requestIdx = 0;
     this.init();
   }
 
