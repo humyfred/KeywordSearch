@@ -71,11 +71,11 @@
               self.mountData(self.processData(self._data, res));
             }
           } catch (e) {
-            error.call(self, e, res);
+            self._error.call(self, e, res);
           }
         },
         error : function(res, textStatus){
-          error.call(self, new Error(textStatus), res);
+          self._error.call(self, new Error(textStatus), res);
         }
       })
     },
