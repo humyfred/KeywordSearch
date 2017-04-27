@@ -2,6 +2,9 @@
 基于Jquery开发的搜索展示插件
 
 ## 效果
+(https://github.com/humyfred/KeywordSearch/blob/master/screenshot/example.gif)
+数据是通过mock平台渲染，会出现对不上现象，请见谅！
+效果链接：https://humyfred.github.io/KeywordSearch/index.html
 
 ## API
 ```html
@@ -16,7 +19,7 @@
           if(res.data.length <= 0){
             return false;
           }
-          return res.data.map(function(d){
+          return res.data.map(function(d){//得到数据返回itemName值，能在渲染在模板上
             return {
               itemName : d.supply_name
             }
@@ -32,6 +35,8 @@
     });
    </script>
 ```   
+## 其他高级用法例子
+
 
 ## License
 This content is released under the MIT License.
