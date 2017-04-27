@@ -13,15 +13,15 @@
     <script>
     new KeywordSearch({
       url:'/supply/index', // 请求地址
-      keyword: 'kw',      //     请求地址的key名
+      keyword: 'kw',      //     搜索的键值
       id : '#keywordSearch', // 输入框id
-      loadType:'get',        // 请求类型
-      data : function(res){  // 模板数据，默认key为itemName
+      loadType:'get',        // 请求地址的方式（get、post、put、delete...）
+      data : function(res){  // 模板数据，展示列表的数据，默认key为itemName
         if(res.code === 0){
           if(res.data.length <= 0){
             return false;
           }
-          return res.data.map(function(d){//得到数据返回itemName值，能在渲染在模板上
+          return res.data.map(function(d){//得到数据返回itemName值，能渲染在模板上
             return {
               itemName : d.supply_name
             }
